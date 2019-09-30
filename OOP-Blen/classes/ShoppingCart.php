@@ -27,6 +27,9 @@ class ShoppingCart
     {
         array_splice($this->products, $position, 1);
     }
+    public function removeAll(){
+        array_splice($this->products, 0);
+    }
 
     /**
      * Returns all products in the shopping cart.

@@ -29,6 +29,10 @@ if (isset($_GET['action'])) {
             $shoppingCart->removeItem($item_index);
             header('Location: cart.php');
             break;
+        case 'remove_all':
+            $items = $_GET['item'];
+            $shoppingCart->removeAll($items);
+            header('Location: cart.php');
     }
 }
 $input = array("red", "green", "blue", "yellow");
@@ -66,8 +70,12 @@ var_dump($input);
                         <a href="cart.php?action=remove_item&item_index=<?php echo $index?>">verwijderen</a>
                     </div>
                 <?php endforeach; ?>
-                <strong>Totaalbedrag:<?php echo $product->getAllPrice() ?></strong>
+                <a href="cart.php?action=remove_all&items=<?php echo $index?>">verwijder alles</a>
+                <strong>Totaalbedrag: <?php ?></strong>
             <?php else: ?>
+
+
+
 
                 <p>Je hebt nog niets in je winkelmandje</p>
 
