@@ -71,8 +71,9 @@ var_dump($input);
                     </div>
                 <?php endforeach; ?>
                 <a href="cart.php?action=remove_all&items=<?php echo $index?>">verwijder alles</a>
-                <strong>Totaalbedrag: <?php ?></strong>
+                <strong>Totaalbedrag: <?php echo $shoppingCart->getTotalPrice(); ?>$</strong>
             <?php else: ?>
+
 
 
 

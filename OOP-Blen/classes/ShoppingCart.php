@@ -45,4 +45,12 @@ class ShoppingCart
         return !empty($this->products);
     }
 
+    public function getTotalPrice() {
+      $total = 0;
+      foreach ($this->products as $product ) {
+        $total = + $product->getPrice();
+      }
+      return $total;
+    }
+
 }
